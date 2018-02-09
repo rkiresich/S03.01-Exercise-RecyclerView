@@ -69,10 +69,7 @@ public class MainActivity extends AppCompatActivity {
     // TODO (23) Create a private string array called mWeatherData
     //COMPLETE
     // TODO (47) Create the default constructor (we will pass in parameters in a later lesson)
-
-    public MainActivity() {
-    }
-
+    //COMPLETE
     // TODO (16) Create a class within ForecastAdapter called ForecastAdapterViewHolder
     //COMPLETE
     // TODO (17) Extend RecyclerView.ViewHolder
@@ -149,8 +146,7 @@ public class MainActivity extends AppCompatActivity {
 
         // TODO (38) Create layoutManager, a LinearLayoutManager with VERTICAL orientation and shouldReverseLayout == false
         //COMPLETE
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        layoutManager.setReverseLayout(false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(layoutManager);
 
         // TODO (39) Set the layoutManager on mRecyclerView
@@ -292,7 +288,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.action_refresh) {
             // TODO (46) Instead of setting the text to "", set the adapter to null before refreshing
-            mForecastAdapter = null;
+            mForecastAdapter.setWeatherData(null);
             loadWeatherData();
             return true;
         }

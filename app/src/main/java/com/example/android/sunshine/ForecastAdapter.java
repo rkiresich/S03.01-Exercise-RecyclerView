@@ -15,6 +15,10 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.Foreca
 
     private String [] mWeatherData;
 
+    public ForecastAdapter(){
+
+    }
+
     @Override
     public ForecastAdapterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
@@ -29,7 +33,8 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.Foreca
 
     @Override
     public void onBindViewHolder(ForecastAdapterViewHolder holder, int position) {
-        holder.mWeatherTextView.setText(Integer.toString(position));
+        String todaysWeather = mWeatherData[position];
+        holder.mWeatherTextView.setText(todaysWeather);
 
     }
 
